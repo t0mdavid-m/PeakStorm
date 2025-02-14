@@ -10,9 +10,21 @@ st.markdown("## PeakStorm - from the most intense peak to the full isotope lands
 c1, c2 = st.columns(2)
 c1.markdown(
     """
-    A simple and efficient web application that computes the isotopic envelope of a protein based on the most intense peak. The results can be visualized and downloaded as TSV or Excel for further analysis.
+    PeakStorm is a lightweight web application that estimates the isotopic 
+    envelope of a protein based on the most intense peak. Using the 
+    **Averagine model** proposed by Senko et al. in *"Determination of 
+    Monoisotopic Masses and Ion Populations for Large Biomolecules from 
+    Resolved Isotopic Distributions,"* it computes the isotope distribution 
+    from the molecular weight and the specified number of isotopes.  
 
-"""
+    Features:  
+    ✔ Computes isotopic distribution from a given peak intensity  
+    ✔ Uses the well-established Averagine model for accuracy  
+    ✔ Visualizes the isotopic envelope in an interactive plot  
+    ✔ Allows download of results in TSV and Excel format  
+
+    Fast. Accurate. Intuitive. 🚀
+    """
 )
 v_space(1, c2)
 c2.image("assets/pyopenms_transparent_background.png", width=300)
