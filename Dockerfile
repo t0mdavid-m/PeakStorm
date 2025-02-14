@@ -17,7 +17,7 @@ ENV GH_TOKEN=${GITHUB_TOKEN}
 # Streamlit app Gihub user name (to download artifact from).
 ARG GITHUB_USER=OpenMS
 # Streamlit app Gihub repository name (to download artifact from).
-ARG GITHUB_REPO=streamlit-template
+ARG GITHUB_REPO=PeakStorm
 
 
 # Step 1: set up a sane build system
