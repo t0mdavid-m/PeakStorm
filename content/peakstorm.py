@@ -80,35 +80,39 @@ with col1:
             best_pos = np.argmin(np.abs(samples-target_base_peak))
             best_avg = samples_avg[best_pos]
             best_intensity = samples[best_pos]
-            
-            # Output fit
-            st.write(
-                f'Most Abundant Mass: {best_intensity} Da '
-                f'(Δ={best_intensity-target_base_peak:.3f} Da)'
-            )
 
             # Compute distribution of best fit
-            distribution = pattern_generator.estimateFromPeptideWeight(
+            distribution_obj = pattern_generator.estimateFromPeptideWeight(
                 best_avg
-            ).getContainer()
+            )
+            distribution = distribution_obj.getContainer()
             mzs = np.array([p.getMZ() for p in distribution])
             intensities = np.array([p.getIntensity() for p in distribution])
+            monoisotopic = distribution_obj.getMin() # Most abundant isotope = lightest
+
+            # Adjust distribution
+            delta = distribution_obj.getMostAbundant().getMZ() - target_base_peak
+            mzs -= delta
+            best_avg -= delta
+            monoisotopic -= delta
+
+            # Output fit
+            st.write(f'Average Mass: {best_avg} Da')
+            st.write(f'Monoisotopic Mass: {monoisotopic} Da')
 
             # Create dataframe
             df = pd.DataFrame({
                 'mz' : mzs,
                 'intensity' : intensities
             })
-            df= df[df['intensity'] != 0]
 
             # Color highlights
             df['color'] = 'black'
             df.iloc[np.argmax(df['intensity']),-1] = 'red'
-            print(df)
 
             # Plot
             fig = go.Figure()
-            fig = df.plot(
+            fig = df[df['intensity'] != 0].plot(
                 x="mz",
                 y="intensity",
                 kind="spectrum",
