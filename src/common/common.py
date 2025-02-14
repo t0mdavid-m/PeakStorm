@@ -432,16 +432,16 @@ def show_fig(
             use_container_width=container_width,
             config={
                 "displaylogo": False,
-                "modeBarButtonsToRemove": [
-                    "zoom",
-                    "pan",
-                    "select",
-                    "lasso",
-                    "zoomin",
-                    "autoscale",
-                    "zoomout",
-                    "resetscale",
-                ],
+                # "modeBarButtonsToRemove": [
+                #     "zoom",
+                #     "pan",
+                #     "select",
+                #     "lasso",
+                #     "zoomin",
+                #     "autoscale",
+                #     "zoomout",
+                #     "resetscale",
+                # ],
                 "toImageButtonOptions": {
                     "filename": download_name,
                     "format": st.session_state["image-format"],
