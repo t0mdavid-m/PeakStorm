@@ -15,7 +15,7 @@ c1.markdown(
     **Averagine model** proposed by Senko et al. in *"Determination of 
     Monoisotopic Masses and Ion Populations for Large Biomolecules from 
     Resolved Isotopic Distributions,"* it computes the isotope distribution 
-    from the molecular weight and the specified number of isotopes.  
+    from the molecular weight.
 
     Features:  
     ✔ Computes isotopic distribution from a given peak intensity  
