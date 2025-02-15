@@ -97,8 +97,8 @@ with col1:
             monoisotopic -= delta
 
             # Output fit
-            st.write(f'Average Mass: {best_avg} Da')
-            st.write(f'Monoisotopic Mass: {monoisotopic} Da')
+            st.write(f'Average Mass: {best_avg:.2f} Da')
+            st.write(f'Monoisotopic Mass: {monoisotopic:.2f} Da')
 
             # Create dataframe
             df = pd.DataFrame({
