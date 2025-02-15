@@ -88,7 +88,7 @@ with col1:
             distribution = distribution_obj.getContainer()
             mzs = np.array([p.getMZ() for p in distribution])
             intensities = np.array([p.getIntensity() for p in distribution])
-            monoisotopic = distribution_obj.getMin() # Most abundant isotope = lightest
+            monoisotopic = np.min(mzs) # Monoisotopic isotope = lightest
 
             # Adjust distribution
             delta = distribution_obj.getMostAbundant().getMZ() - target_base_peak
