@@ -41,7 +41,7 @@ with col1:
             # Extend to the right
             right_samples = []
             right_samples_avg = []
-            for delta in np.arange(0, 20, 0.5):
+            for delta in np.arange(0, 20, 0.2):
                 current_sample = pattern_generator.estimateFromPeptideWeight(
                     target_base_peak + delta
                 ).getMostAbundant().getMZ()
@@ -58,7 +58,7 @@ with col1:
             # Extend to the left
             left_samples = []
             left_samples_avg = []
-            for delta in np.arange(0, 20, 0.5):
+            for delta in np.arange(0, 20, 0.2):
                 current_sample = pattern_generator.estimateFromPeptideWeight(
                     target_base_peak-delta
                 ).getMostAbundant().getMZ()
