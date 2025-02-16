@@ -90,6 +90,9 @@ with col1:
             intensities = np.array([p.getIntensity() for p in distribution])
             monoisotopic = np.min(mzs) # Monoisotopic isotope = lightest
 
+            # Recompute average
+            best_avg = np.sum(mzs * intensities)
+
             # Adjust distribution
             delta = distribution_obj.getMostAbundant().getMZ() - target_base_peak
             mzs -= delta
